@@ -1,7 +1,7 @@
 package TestesAutomatizados;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculadoraTesteJUnit {
 
@@ -11,7 +11,6 @@ public class CalculadoraTesteJUnit {
         int soma = calculo.soma(5,5);
 
         // Com isso o JUnit irá verirficar se os valores são iguais - primeiro parâmetro é o valor esperado.
-        assertEquals(10, soma);
-
+        Assertions.assertEquals(10,soma);
     }
 }
