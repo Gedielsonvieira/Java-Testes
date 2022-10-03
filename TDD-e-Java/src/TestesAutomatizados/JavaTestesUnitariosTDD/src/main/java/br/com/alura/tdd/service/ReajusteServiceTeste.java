@@ -10,36 +10,38 @@ Se o desempenho for "Ótimo", o reajuste será de 20% do salário.
 import TestesAutomatizados.JavaTestesUnitariosTDD.src.main.java.br.com.alura.tdd.modelo.Desempenho;
 import TestesAutomatizados.JavaTestesUnitariosTDD.src.main.java.br.com.alura.tdd.modelo.Funcionario;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class ReajusteServiceTeste {
+
+    private ReajusteService service;
+    private Funcionario funcionario;
+
+    @BeforeEach
+    public void instanciarReferenciaObjeto() {
+        this.service = new ReajusteService();
+        this.funcionario = new Funcionario("Geslon", LocalDate.now(), new BigDecimal(1000));
+    }
+
     @Test
     public void reajusteDeveriaSerDeTresPorcentoQuandoDesempenhoForADesejar() {
-        ReajusteService service = new ReajusteService();
-        Funcionario funcionario = new Funcionario("Geslon", LocalDate.now(), new BigDecimal(1000));
         service.concederAjuste(funcionario, Desempenho.A_DESEJAR);
-
         Assertions.assertEquals(new BigDecimal("1030.00"), funcionario.getSalario());
     }
 
     @Test
     public void reajusteDeveriaSerDeQuinzePorcentoQuandoDesempenhoForBom() {
-        ReajusteService service = new ReajusteService();
-        Funcionario funcionario = new Funcionario("Geslon", LocalDate.now(), new BigDecimal(1000));
         service.concederAjuste(funcionario, Desempenho.BOM);
-
         Assertions.assertEquals(new BigDecimal("1150.00"), funcionario.getSalario());
     }
 
     @Test
     public void reajusteDeveriaSerDeVintePorcentoQuandoDesempenhoForOtimo() {
-        ReajusteService service = new ReajusteService();
-        Funcionario funcionario = new Funcionario("Geslon", LocalDate.now(), new BigDecimal(1000));
         service.concederAjuste(funcionario, Desempenho.OTIMO);
-
         Assertions.assertEquals(new BigDecimal("1200.00"), funcionario.getSalario());
     }
 }

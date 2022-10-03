@@ -14,6 +14,7 @@ O JUnit é a principal biblioteca Java utilizada para escrever os chamados teste
 
 ✅ Garante que o código da aplicação atende corretamente aos requisitos de negócio.
 
+
 ## JUnit
 > Biblioteca padrão para escrita de testes automatizados em java
 
@@ -25,13 +26,14 @@ O JUnit simplifica a maneira de testar, não precisando ter o método main, impr
 
 <strong>pom.xml:</strong> Esse arquivo é usado para definir algumas configurações do projeto. Dentre elas, as dependências da aplicação, também usadas para adicionar o JUnit ao projeto, ou seja, em vez de usarmos a integração com a IDE, vamos adicionar o JUnit como uma dependência do Maven (ou de outra ferramenta de gestão de dependências).
 
+
 ## TDD: Test-Driven Development (Desenvolvimento Orientado/guiado a Testes)
 
-<img alt="Processo TDD" src="./src/TestesAutomatizados/JavaTestesUnitariosTDD/processo-TDD.jpg">
+<img alt="Processo TDD" src="./src/TestesAutomatizados/JavaTestesUnitariosTDD/processo-TDD.jpg" style="padding: 0 80px;">
+
 No TDD, escrevemos o teste, implementamos o mínimo necessário para ele funcionar corretamente num determinado cenário e passamos por uma terceira etapa que é a refatoração (ou refactoring), prática usada para melhorar um código existente sem mudar seu comportamento.
 
 A ideia é que, após escrever um teste e implementá-lo sem falhas, possamos revisar o código da implementação para deixá-lo mais funcional e organizado (melhorar os nomes de variáveis, reduzir a quantidade de if elses, etc.).
-
 
 ### Vantagens:
 ✅ <strong>Código já sai "testado"</strong> Na abordagem tradicional (implementação primeiro e depois teste), o fato de deixarmos o teste por último faz com que muitas pessoas pulem essa etapa. Especialmente se estamos trabalhando com uma funcionalidade muito complexa. No TDD, isso não acontece porque a escrita do teste é a primeira etapa do processo.
@@ -46,8 +48,25 @@ A ideia é que, após escrever um teste e implementá-lo sem falhas, possamos re
 
 ✅ <strong>Tendência a escrever um código mais simples:</strong> Quando usamos o TDD, tendemos a escrever um código mais simples, tanto para o teste quando para a implementação. Esse não é um benefício automático, mas tende a acontecer naturalmente conforme adquirimos experiência. Isso porque, ao começar pelo teste, queremos que ele seja o mais simples possível para podermos partir logo para a implementação.
 
-
 ### Quando utilizar TDD?
 Usar o TDD para implementar funcionalidades complexas, cuja estrutura ainda não está totalmente clara desde o começo. Nesses casos, o TDD é de grande ajuda porque funciona como um rascunho.
 
 Porém, ao trabalhar com códigos mais simples, sem muitos problemas de design, talvez não valha a pena usar o TDD porque não vamos sentir tanto os seus benefícios.
+
+
+## Lidando com exceptions
+> A maneira correta de testar um método que lança exception é utilizando o método <strong>assertThrows</strong> que serve para verificar se uma exception foi lançada ao chamar um método ou através do <strong>try catch</strong>.
+
+### Tipos de abordagens utilizadas nos testes:
+✅ Na primeira, vamos chamar um método que devolve um valor e testar se esse valor está correto.<br>
+✅ A segunda abordagem envolve testar um objeto modificado pelo método.<br>
+✅ A terceira é aquela que lança uma exception e na qual simulamos se ela de fato acontece.
+
+## Mais recursos
+✅ A anotação <strong>@BeforeEach</strong> marca um método para ser chamado antes de cada um dos métodos de teste, isso nos ajuda a não ter que ficar invocando métodos, dentro do método de teste a cada método de teste existente.<br>
+✅ <strong>@AfterEach</strong> serve para fazer alguma ação após cada método ser chamado<br>
+✅ <strong>@BeforeAll</strong> serve para executar uma ação uma única vez antes de todos os testes<br>
+✅ <strong>@AfterAll</strong> serve para executar uma ação uma única vez depois de todos os testes
+
+## Boas práticas 
+Ao refatorar, devemos refatorar o código de implementação e também o código teste.

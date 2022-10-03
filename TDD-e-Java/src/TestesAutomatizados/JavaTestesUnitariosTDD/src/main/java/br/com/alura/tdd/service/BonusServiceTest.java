@@ -11,21 +11,26 @@ class BonusServiceTest {
     @Test
     public void bonusDeveriaSerZeroParaFuncionarioComSalarioMuitoAlto() {
         BonusService service = new BonusService();
-        BigDecimal bonus = service.calcularBonus(new Funcionario("Gedielson", LocalDate.now(),new BigDecimal("20000")));
-        Assertions.assertEquals(new BigDecimal("0"), bonus);
+        Assertions.assertThrows(IllegalArgumentException.class, () -> service.calcularBonus(new Funcionario("Gedielson", LocalDate.now(),new BigDecimal("20000"))));
+
+//        try {
+//            service.calcularBonus(new Funcionario("Gedielson", LocalDate.now(), new BigDecimal("20000")));
+//        } catch (Exception ex) {
+//            ex.getMessage();
+//        }
     }
 
     @Test
     public void bonusDeveriaSerDezPorCentoParaFuncionarioComSalarioBaixo() {
         BonusService service = new BonusService();
-        BigDecimal bonus = service.calcularBonus(new Funcionario("Gedielson", LocalDate.now(),new BigDecimal("1000")));
+        BigDecimal bonus = service.calcularBonus(new Funcionario("Gedielson", LocalDate.now(), new BigDecimal("1000")));
         Assertions.assertEquals(new BigDecimal("100.0"), bonus);
     }
 
     @Test
     public void bonusDeveriaSerDezPorCentoParaSalarioDeExatamente10000() {
         BonusService service = new BonusService();
-        BigDecimal bonus = service.calcularBonus(new Funcionario("Gedielson", LocalDate.now(),new BigDecimal("10000")));
+        BigDecimal bonus = service.calcularBonus(new Funcionario("Gedielson", LocalDate.now(), new BigDecimal("10000")));
         Assertions.assertEquals(new BigDecimal("1000.0"), bonus);
     }
 }
