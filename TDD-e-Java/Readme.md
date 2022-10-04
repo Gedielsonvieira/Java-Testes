@@ -63,10 +63,15 @@ Porém, ao trabalhar com códigos mais simples, sem muitos problemas de design, 
 ✅ A terceira é aquela que lança uma exception e na qual simulamos se ela de fato acontece.
 
 ## Mais recursos
-✅ A anotação <strong>@BeforeEach</strong> marca um método para ser chamado antes de cada um dos métodos de teste, isso nos ajuda a não ter que ficar invocando métodos, dentro do método de teste a cada método de teste existente.<br>
+### Anotações JUnit:
+✅ <strong>@BeforeEach</strong> marca um método para ser chamado antes de cada um dos métodos de teste, isso nos ajuda a não ter que ficar invocando métodos, dentro do método de teste a cada método de teste existente.<br>
 ✅ <strong>@AfterEach</strong> serve para fazer alguma ação após cada método ser chamado<br>
 ✅ <strong>@BeforeAll</strong> serve para executar uma ação uma única vez antes de todos os testes<br>
 ✅ <strong>@AfterAll</strong> serve para executar uma ação uma única vez depois de todos os testes
 
 ## Boas práticas 
-Ao refatorar, devemos refatorar o código de implementação e também o código teste.
+✅ Ao refatorar, devemos refatorar o código de implementação e também o código teste.
+
+✅ Se o <strong>método é privado não devemos testá-lo</strong>, como ele estará sendo utilizado internamente em outros métodos, já estaremos testando ele através de métodos públicos que fazem a utilização dele.
+
+✅ As classes que são consideradas boas candidatas para testes automatizados são apenas as classes que possuem regras de negócio e que possivelmente sofrerão bastante modificações.
