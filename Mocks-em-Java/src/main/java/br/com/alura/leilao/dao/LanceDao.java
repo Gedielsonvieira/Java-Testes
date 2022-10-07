@@ -1,12 +1,12 @@
-package main.java.br.com.alura.leilao.dao;
+package br.com.alura.leilao.dao;
 
 import javax.persistence.EntityManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import main.java.br.com.alura.leilao.model.Lance;
-import main.java.br.com.alura.leilao.model.Leilao;
+import br.com.alura.leilao.model.Lance;
+import br.com.alura.leilao.model.Leilao;
 
 @Repository
 public class LanceDao {

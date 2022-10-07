@@ -16,3 +16,13 @@ As bibliotecas de Mock existem para para não termos que dedicar tanto trabalho 
 
 > Uma forma para pedir ao Mockito para que crie um mock de uma determinada classe é:<br>
 <strong>Mockito.mock(Classe.class)</strong>
+
+## Escrevendo testes com mockito
+* @Mock - serve para indicar ao Mockito quais atributos são mocks
+
+* MockitoAnnotetions.initMocks(this); - 
+é para ler as anotações do mockito (@Mock é uma delas) e inicializar um mock, mas de qual classe? this, da própria classe de teste
+
+
+## Boas práticas
+✅ <strong>É considerada uma boa prática injetar as dependências sempre pelo construtor</strong> ao invés de injetar as dependência pelo atributo. Isso porque o construtor já deixa óbvio quais as dependências daquela classe e, com ele, conseguimos passar um Mock como parâmetro para os testes. Isso simplifica o processo.

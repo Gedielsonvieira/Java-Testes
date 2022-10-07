@@ -1,4 +1,4 @@
-package main.java.br.com.alura.leilao.dao;
+package br.com.alura.leilao.dao;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import main.java.br.com.alura.leilao.model.Leilao;
+import br.com.alura.leilao.model.Leilao;
 import main.java.br.com.alura.leilao.model.Usuario;
 
 @Repository

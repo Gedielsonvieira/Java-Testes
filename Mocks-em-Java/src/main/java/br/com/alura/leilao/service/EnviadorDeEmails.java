@@ -1,7 +1,7 @@
-package main.java.br.com.alura.leilao.service;
+package br.com.alura.leilao.service;
 
-import main.java.br.com.alura.leilao.model.Lance;
-import main.java.br.com.alura.leilao.model.Leilao;
+import br.com.alura.leilao.model.Lance;
+import br.com.alura.leilao.model.Leilao;
 import org.springframework.stereotype.Service;
 
 import main.java.br.com.alura.leilao.model.Usuario;

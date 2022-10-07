@@ -1,4 +1,4 @@
-package main.java.br.com.alura.leilao.model;
+package br.com.alura.leilao.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -13,6 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
+
+import br.com.alura.leilao.model.Leilao;
+import main.java.br.com.alura.leilao.model.Usuario;
 
 @Entity
 public class Lance {

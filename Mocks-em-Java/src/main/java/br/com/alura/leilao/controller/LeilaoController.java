@@ -1,15 +1,15 @@
-package main.java.br.com.alura.leilao.controller;
+package br.com.alura.leilao.controller;
 
 import java.security.Principal;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
-import main.java.br.com.alura.leilao.dao.LeilaoDao;
+import br.com.alura.leilao.dao.LeilaoDao;
 import main.java.br.com.alura.leilao.dao.UsuarioDao;
-import main.java.br.com.alura.leilao.dto.NovoLanceDto;
+import br.com.alura.leilao.dto.NovoLanceDto;
 import main.java.br.com.alura.leilao.dto.NovoLeilaoDto;
-import main.java.br.com.alura.leilao.model.Leilao;
+import br.com.alura.leilao.model.Leilao;
 import main.java.br.com.alura.leilao.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,10 +1,11 @@
-package main.java.br.com.alura.leilao.service;
+package br.com.alura.leilao.service;
 
 import java.time.LocalDate;
 
-import main.java.br.com.alura.leilao.dao.PagamentoDao;
-import main.java.br.com.alura.leilao.model.Lance;
-import main.java.br.com.alura.leilao.model.Pagamento;
+import br.com.alura.leilao.model.Lance;
+import br.com.alura.leilao.dao.PagamentoDao;
+import br.com.alura.leilao.model.Lance;
+import br.com.alura.leilao.model.Pagamento;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

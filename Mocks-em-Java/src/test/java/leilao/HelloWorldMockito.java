@@ -1,6 +1,6 @@
 package test.java.leilao;
 
-import main.java.br.com.alura.leilao.dao.LeilaoDao;
+import br.com.alura.leilao.dao.LeilaoDao;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

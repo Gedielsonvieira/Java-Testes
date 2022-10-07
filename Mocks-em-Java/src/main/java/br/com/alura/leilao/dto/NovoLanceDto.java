@@ -1,4 +1,4 @@
-package main.java.br.com.alura.leilao.dto;
+package br.com.alura.leilao.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 
-import main.java.br.com.alura.leilao.model.Lance;
+import br.com.alura.leilao.model.Lance;
 import main.java.br.com.alura.leilao.model.Usuario;
 
 public class NovoLanceDto {
