@@ -23,12 +23,15 @@ public class FinalizarLeilaoServiceTest {
     @Mock
     private LeilaoDao leilaoDao;
 
+    @Mock
+    private EnviadorDeEmails enviadorDeEmails;
+
     /* Mocamos leilaoDao porque queremos fazer um teste unitário e como leilaoDao faz as queries no BD
     e queremos focar somente no comportamento dos métodos o mock vai simular essa classe, assim conseguimos focar somente no comportamento, lógica */
     @BeforeEach
     public void BeforeEach() {
         MockitoAnnotations.initMocks(this);
-        this.service = new FinalizarLeilaoService(leilaoDao);//passando um mock para uma classe via construtor
+        this.service = new FinalizarLeilaoService(leilaoDao, enviadorDeEmails);//passando um mock para uma classe via construtor
     }
 
     @Test
@@ -46,6 +49,21 @@ public class FinalizarLeilaoServiceTest {
         Mockito.verify(leilaoDao).salvar(leilao);
     }
 
+    //Teste com mock - Ao finalizar o leilao o email é enviado para o vencedor?
+    @Test
+    void deveriaenviarEmailParaVencedorDoLeilao() {
+        List<Leilao> leiloes = leiloes();
+
+        Mockito.when(leilaoDao.buscarLeiloesExpirados()).thenReturn(leiloes);
+
+        service.finalizarLeiloesExpirados();
+
+        Leilao leilao = leiloes.get(0);
+        Lance lanceVencedor = leilao.getLanceVencedor();
+
+        Mockito.verify(enviadorDeEmails).enviarEmailVencedorLeilao(lanceVencedor);
+    }
+
     private List<Leilao> leiloes() {
         List<Leilao> lista = new ArrayList<>();
 
@@ -60,5 +78,21 @@ public class FinalizarLeilaoServiceTest {
         lista.add(leilao);
 
         return lista;
+    }
+
+    //Teste com mock - Se der erro ao salvar não devemos enviar o e-mail (enviadorDeEmails - não deve ser chamado)
+    @Test
+    void naoDeveriaenviarEmailParaVencedorDoLeilaoEmCasoDeErroAoEncerrarOLeilao() {
+        List<Leilao> leiloes = leiloes();
+
+        Mockito.when(leilaoDao.buscarLeiloesExpirados()).thenReturn(leiloes);
+
+        Mockito.when(leilaoDao.salvar(Mockito.any())).thenThrow(RuntimeException.class);
+
+        try {
+            service.finalizarLeiloesExpirados();
+            Mockito.verifyNoInteractions(enviadorDeEmails);//verifica se um método não foi chamado
+        } catch (Exception e) {
+        }
     }
 }

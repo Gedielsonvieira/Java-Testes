@@ -1,4 +1,4 @@
-package main.java.br.com.alura.leilao;
+package br.com.alura.leilao;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
