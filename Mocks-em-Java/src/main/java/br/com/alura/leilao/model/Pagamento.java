@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
-import main.java.br.com.alura.leilao.model.Usuario;
+import br.com.alura.leilao.model.Usuario;
 
 @Entity
 public class Pagamento {

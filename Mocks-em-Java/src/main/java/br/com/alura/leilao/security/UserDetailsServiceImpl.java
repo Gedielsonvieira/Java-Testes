@@ -1,7 +1,7 @@
-package main.java.br.com.alura.leilao.security;
+package br.com.alura.leilao.security;
 
-import main.java.br.com.alura.leilao.dao.UsuarioDao;
-import main.java.br.com.alura.leilao.model.Usuario;
+import br.com.alura.leilao.dao.UsuarioDao;
+import br.com.alura.leilao.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,4 +1,4 @@
-package main.java.br.com.alura.leilao.dto;
+package br.com.alura.leilao.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

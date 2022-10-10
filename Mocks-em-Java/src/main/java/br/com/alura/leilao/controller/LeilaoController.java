@@ -6,11 +6,11 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import br.com.alura.leilao.dao.LeilaoDao;
-import main.java.br.com.alura.leilao.dao.UsuarioDao;
+import br.com.alura.leilao.dao.UsuarioDao;
 import br.com.alura.leilao.dto.NovoLanceDto;
-import main.java.br.com.alura.leilao.dto.NovoLeilaoDto;
+import br.com.alura.leilao.dto.NovoLeilaoDto;
 import br.com.alura.leilao.model.Leilao;
-import main.java.br.com.alura.leilao.model.Usuario;
+import br.com.alura.leilao.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;

@@ -15,7 +15,7 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 
 import br.com.alura.leilao.model.Leilao;
-import main.java.br.com.alura.leilao.model.Usuario;
+import br.com.alura.leilao.model.Usuario;
 
 @Entity
 public class Lance {

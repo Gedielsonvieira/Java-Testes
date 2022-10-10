@@ -7,7 +7,7 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 
 import br.com.alura.leilao.model.Lance;
-import main.java.br.com.alura.leilao.model.Usuario;
+import br.com.alura.leilao.model.Usuario;
 
 public class NovoLanceDto {
 

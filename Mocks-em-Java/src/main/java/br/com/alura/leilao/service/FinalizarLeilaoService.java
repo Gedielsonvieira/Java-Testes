@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class FinalizarLeilaoService {
 
-
     private LeilaoDao leiloes;
 
     @Autowired

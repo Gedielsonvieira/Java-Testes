@@ -4,7 +4,7 @@ import br.com.alura.leilao.model.Lance;
 import br.com.alura.leilao.model.Leilao;
 import org.springframework.stereotype.Service;
 
-import main.java.br.com.alura.leilao.model.Usuario;
+import br.com.alura.leilao.model.Usuario;
 
 @Service
 public class EnviadorDeEmails {
