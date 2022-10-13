@@ -49,9 +49,11 @@ conseguimos passar um Mock como parâmetro para os testes. Isso simplifica o pro
 
 ## Outras situações
 
+* Existe um conceito no Mockito chamado Captor, para capturar um determinado objeto.
+    * Sempre que tivermos um Mock que chama um método da classe que estamos testando e passa para ele um objeto que não
+      temos no teste, ou seja, um objeto criado na classe a ser testada, utilizamos um Captor.
+
+
 * Não é considerada uma boa prática fazer chamadas a métodos estáticos, do ponto de vista de testes automatizados,
   porque métodos estáticos dificultam a utilização de mocks, quando precisamos simular comportamentos.
-
-
-* Existe um conceito no Mockito chamado Captor, para capturar um determinado objeto.
-  * Sempre que tivermos um Mock que chama um método da classe que estamos testando e passa para ele um objeto que não temos no teste, ou seja, um objeto criado na classe a ser testada, utilizamos um Captor.
+  * O ideal é sempre substituirmos o método estático por alguma abstração, classe ou interface, que consigamos passar como parâmetro para classe sendo testada. Com isso, no teste passamos um Mock como parâmetro.
